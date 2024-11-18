@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>About-Floor to Ceiling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/about.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="images/logo-removebg-preview.png" alt="Floor to Ceiling">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    
+   
+     <div class="about-section">
+        <div class="section">
+          <div class="text">
+            <h2>About Us</h2>
+            <div class="divider1"></div>
+            <p>
+              Floor To Ceiling Building Material PTY Ltd is a leading provider of high-quality construction materials and accessories. Based in Australia, we have been serving the building industry with a wide range of top-tier products.
+            </p>
+          </div>
+          <div class="image">
+            <img src="images/about-1.jpg" alt="Construction Materials">
+          </div>
+        </div>
+      
+        <!-- Section 2 -->
+        <div class="section">
+         
+          <div class="text">
+            <h2>What Sets Us Apart</h2>
+            <div class="divider1"></div>
+            <p>
+              What sets us apart is our commitment to exceptional customer service, technical expertise, and strong global partnerships. We work closely with renowned manufacturers worldwide to bring the best solutions to our customers' doorsteps, no matter the project size or complexity.
+            </p>
+          </div>
+ 
+          <div class="image">
+            <img src="images/about-2.jpg" alt="Global Partnerships">
+          </div>
+        </div>
+      
+        <!-- Section 3 -->
+        <div class="section">
+          <div class="text">
+            <h2>Why Choose Us</h2>
+            <div class="divider1"></div>
+            <p>
+              Our interconnected network of warehouses and logistics partners allows us to deliver orders efficiently across Australia and internationally. Whether you're a homeowner, contractor, or commercial developer, you can count on Floor To Ceiling Building Material PTY Ltd to provide the high-quality materials and responsive support you need to bring your vision to life.
+            </p>
+          </div>
+          <div class="image">
+            <img src="images/about-3.jpg" alt="Efficient Logistics">
+          </div>
+        </div>
+      
+      </div>
+        <section class="product-portfolio">
+          <div class="portfolio-container">
+            <h1>Our Product Portfolio</h1>
+            <div class="divider1"></div>
+            <div class="portfolio-grid">
+              <div class="portfolio-card">
+                <h2>Tiles and Tile Adhesives</h2>
+                <p>High-quality tiles and reliable adhesives for every project.</p>
+              </div>
+              <div class="portfolio-card">
+                <h2>Grouts and Waterproofing Sealers</h2>
+                <p>Durable solutions to protect and strengthen your construction.</p>
+              </div>
+              <div class="portfolio-card">
+                <h2>Cement, Mortar, and Concrete Mixes</h2>
+                <p>Top-tier mixes for superior structural integrity.</p>
+              </div>
+              <div class="portfolio-card">
+                <h2>Paints, Varnishes, and Coatings</h2>
+                <p>Vibrant and long-lasting finishes for interior and exterior projects.</p>
+              </div>
+              <div class="portfolio-card">
+                <h2>Hardwood Flooring</h2>
+                <p>Premium hardwood floors that add elegance to any space.</p>
+              </div>
+              <div class="portfolio-card">
+                <h2>Laminate Flooring</h2>
+                <p>Stylish and affordable options for modern interiors.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="why-choose-us">
+          <div class="why-choose-container">
+            <h1>Why Choose Floor To Ceiling</h1>
+            <div class="divider1"></div>
+            <div class="features-grid">
+              <div class="feature-card">
+                <i class="icon-check"></i>
+                <h2>Expert Support</h2>
+                <p>Technical expertise and responsive customer service</p>
+              </div>
+              <div class="feature-card">
+                <i class="icon-globe"></i>
+                <h2>Global Network</h2>
+                <p>Strong partnerships with leading manufacturers worldwide</p>
+              </div>
+              <div class="feature-card">
+                <i class="icon-delivery"></i>
+                <h2>Efficient Delivery</h2>
+                <p>Nationwide distribution network for timely delivery</p>
+              </div>
+              <div class="feature-card">
+                <i class="icon-star"></i>
+                <h2>Quality Assured</h2>
+                <p>Premium products from trusted brands</p>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+  
+  <div class="footer-bottom">
+    <a href="about.html">About Us</a> |
+    <a href="product.html">Produts</a> |
+    <a href="contact.html">Contact</a>
+    <p>© 2024 Floor To Ceiling rights reserved.</p>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="scripts.js"></script>
+
+  <script>gsap.registerPlugin(ScrollTrigger);
+
+    let lastScrollY = 0;
+    
+    window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+    
+        if (currentScrollY > lastScrollY) {
+            // User is scrolling down
+            document.querySelector('.navbar').classList.add('hidden');
+        } else {
+            // User is scrolling up
+            document.querySelector('.navbar').classList.remove('hidden');
+        }
+    
+        lastScrollY = currentScrollY;
+    });
+    </script>
+</body>
+</html>
