@@ -1,83 +1,22 @@
+// script.js
+const btn = document.querySelector('.btn');
+const fallingHeartsContainer = document.getElementById('falling-hearts-container');
 
-//   swipper
-var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop:true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+btn.addEventListener('click', () => {
+  alert('Love You Too, Janu! ❤️ Madhurima + Koushik Forever!.Sorry Sona Ami hurt korte chai ni.Bojho na kato valo basi tomay.Miss you🥺');
 
-//   swipper
+  // Add 50 falling hearts
+  for (let i = 0; i < 50; i++) {
+    const heart = document.createElement('div');
+    heart.classList.add('falling-heart');
+    heart.style.left = `${Math.random() * 100}vw`;
+    heart.style.animationDelay = `${Math.random() * 5}s`;
+    heart.style.animationDuration = `${3 + Math.random() * 2}s`;
+    fallingHeartsContainer.appendChild(heart);
 
-// service
-document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll(".fade-in");
-  
-    const fadeInOnScroll = () => {
-      images.forEach((img) => {
-        const imgPosition = img.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
-  
-        if (imgPosition < screenPosition) {
-          img.classList.add("visible");
-        }
-      });
-    };
-  
-    window.addEventListener("scroll", fadeInOnScroll);
-    fadeInOnScroll(); // Trigger once on load in case images are in view
-  });
-  
-
-// service
-
-
-// Fade-in effect on scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const fadeElements = document.querySelectorAll(".fade-in");
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
+    // Remove heart after animation ends
+    heart.addEventListener('animationend', () => {
+      heart.remove();
     });
-  
-    fadeElements.forEach(element => {
-      observer.observe(element);
-    });
-  });
-
-
-
-
-
-  gsap.registerPlugin(ScrollTrigger);
-
-let lastScrollY = 0;
-
-window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY) {
-        // User is scrolling down
-        document.querySelector('.navbar').classList.add('hidden');
-    } else {
-        // User is scrolling up
-        document.querySelector('.navbar').classList.remove('hidden');
-    }
-
-    lastScrollY = currentScrollY;
+  }
 });
