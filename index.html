@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Love You Janu Card</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Signature Upload</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="card">
-    <div class="heart-container">
-      <div class="heart"></div>
-      <div class="heart"></div>
-      <div class="heart"></div>
+    <div class="container">
+        <h2>Upload Your Photo and Signature</h2>
+        <form id="uploadForm">
+            <label for="image">Upload Photo (JPG/JPEG):</label>
+            <input type="file" id="image" name="image" accept="image/jpeg, image/jpg" required><br><br>
+
+            <label for="signature">Upload Signature (JPG/JPEG):</label>
+            <input type="file" id="signature" name="signature" accept="image/jpeg, image/jpg" required><br><br>
+
+            <input type="submit" value="Upload">
+        </form>
+
+        <div id="links"></div>
     </div>
-    <h1 class="message">Love You, <span class="name">Janu</span></h1>
-    <p class="names">Madhurima ❤️ Koushik</p>
-    <button class="btn">Click Me</button>
-  </div>
-  <div id="falling-hearts-container"></div>
-  <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
