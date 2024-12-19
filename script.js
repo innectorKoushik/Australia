@@ -1,22 +1,29 @@
-// script.js
-const btn = document.querySelector('.btn');
-const fallingHeartsContainer = document.getElementById('falling-hearts-container');
+document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
 
-btn.addEventListener('click', () => {
-  alert('Love You Too, Janu! ❤️ Madhurima + Koushik Forever!.Sorry Sona Ami hurt korte chai ni.Bojho na kato valo basi tomay.Miss you🥺');
+    const formData = new FormData();
+    formData.append('image', document.getElementById('image').files[0]);
+    formData.append('signature', document.getElementById('signature').files[0]);
 
-  // Add 50 falling hearts
-  for (let i = 0; i < 50; i++) {
-    const heart = document.createElement('div');
-    heart.classList.add('falling-heart');
-    heart.style.left = `${Math.random() * 100}vw`;
-    heart.style.animationDelay = `${Math.random() * 5}s`;
-    heart.style.animationDuration = `${3 + Math.random() * 2}s`;
-    fallingHeartsContainer.appendChild(heart);
+    try {
+        const response = await fetch('http://127.0.0.1:8000/upload/', {
+            method: 'POST',
+            body: formData,
+        });
 
-    // Remove heart after animation ends
-    heart.addEventListener('animationend', () => {
-      heart.remove();
-    });
-  }
+        const data = await response.json();
+
+        if (response.ok) {
+            document.getElementById('links').innerHTML = `
+                <h3>Download your photo</h3>
+                <a href="${data.download_your_photo}" target="_blank">Download Photo</a><br><br>
+                <h3>Download your signature</h3>
+                <a href="${data.download_your_signature}" target="_blank">Download Signature</a>
+            `;
+        } else {
+            document.getElementById('links').innerText = 'Error: ' + data.detail;
+        }
+    } catch (error) {
+        document.getElementById('links').innerText = 'Error: ' + error.message;
+    }
 });
